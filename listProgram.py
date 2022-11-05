@@ -42,12 +42,12 @@ def separator():
     
 def listing():
     print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-    list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+    list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
     print("\t" + str(list1) + "\n")
     
 def menu():
     print("\t\33[1m\33[33m*\33[0m---+---+---+--\33[1m\33[33mMENU\33[0m--+---+---+---\33[1m\33[33m*\33[0m")
-    menu_list = ["\n\t \33[3m\33[1m 1 -> Add an element \33[0m", "\t \33[3m\33[1m 2 -> Insert an element \33[0m", "\t \33[3m\33[1m 3 -> Modify an element \33[0m", "\t \33[3m\33[1m 4 -> Delete an element \33[0m", "\t \33[3m\33[1m 5 -> Arrange in ascending order \33[0m", "\t \33[3m\33[1m 6 -> Arrange in descending order \33[0m", "\t \33[3m\33[1m 7 -> Exit \33[0m\n"]
+    menu_list = ["\n\t \33[3m\33[1m 1 -> Add an element \33[0m", "\t \33[3m\33[1m 2 -> Insert an element \33[0m", "\t \33[3m\33[1m 3 -> Sum of an elements \33[0m", "\t \33[3m\33[1m 4 -> Delete an element \33[0m", "\t \33[3m\33[1m 5 -> Arrange in ascending order \33[0m", "\t \33[3m\33[1m 6 -> Arrange in descending order \33[0m", "\t \33[3m\33[1m 7 -> Exit \33[0m\n"]
     for item in menu_list:
         print(item)
 
@@ -56,7 +56,7 @@ def play():
         choice = input("\n\t\33[92m      Enter your choice[1-6]\33[0m \n\t   >> ")
         if choice == '1':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
             userInput = input('\n\t\33[92m   Enter a number you want to add\33[0m \n\t    >> ')
             list1.append(userInput)
@@ -64,7 +64,7 @@ def play():
             
         elif choice == '2':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
             userInput = input('\n\t\33[92m   Enter a number you want to insert\33[0m \n\t    >> ')
             list1.insert(userInput)
@@ -72,15 +72,15 @@ def play():
             
         elif choice == '3':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
-            userInput = input('\n\t\33[92m   Enter a number you want to insert\33[0m \n\t    >> ')
-            list1.insert(userInput)
-            print("\t" + str(list1) + "\n")
+            print("\t\33[3m\33[1mThis is the Sum of the elements: \33[0m")
+            total = sum(list1)
+            print("\t" + str(total) + "\n")
             
         elif choice == '4':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
             userInput = input('\n\t\33[92m   Enter a number you want to delete\33[0m \n\t    >> ')
             list1.remove(userInput)
@@ -88,26 +88,29 @@ def play():
             
         elif choice == '5':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
-            list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 17])
+            list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 79])
             print("\t\33[3m\33[1mSorted in ascending order: \33[0m")
             print("\t" + str(list1) + "\n")
             
         elif choice == '6':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
-            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 17]
+            list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
-            list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 17], reverse=True)
+            list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 79], reverse=True)
             print("\t\33[3m\33[1mSorted in descending order: \33[0m")
             print("\t" + str(list1) + "\n")
             
         elif choice == '7':
             print("\n")
             separator()
-            print ("\t\33[1m\33[93m\33[3m           You can now exit.\33[0m")
+            print ("\t\33[1m\33[31m\33[3m        You can now exit.\33[0m")
             separator()
             sys.exit("\n")
+            
+        else:
+            print("\33[31m\33[1m       Error! Invalid input. Press any key to continue...\33[0m\n")
             
     
 
