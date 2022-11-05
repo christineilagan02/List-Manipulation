@@ -33,9 +33,28 @@ import sys
 
 def intro():
     separator()
-    print("\t\33[1m            Welcome to \33[0m")
-    print("\33[1m\33[33m\t      Manipulating the List\33[0m")
+    title1()
+    title2()
     separator()
+    name = input("\n\t    Hello! What is your name? \n\t      >> ")
+    print(f"\n\t     Well \33[1m{name.title()}\33[0m enjoy playing \n\t       and let's begin!!\n")
+    separator()
+    
+def title1():
+    from time import sleep
+    string = ("\t\33[1m            Welcome to \33[0m\n")
+    for letter in string:
+        sleep(0.15)
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        
+def title2():
+    from time import sleep
+    string = ("\33[1m\33[33m\t      Manipulating the List\33[0m\n")
+    for letter in string:
+        sleep(0.15)
+        sys.stdout.write(letter)
+        sys.stdout.flush()
     
 def separator():
     print("\t\33[1m\33[33m*\33[0m---+---+---+---\33[1m\33[33m*\33[0m---+---+---+---\33[1m\33[33m*\33[0m")
@@ -53,7 +72,7 @@ def menu():
 
 def play():
     while True:
-        choice = input("\n\t\33[92m      Enter your choice[1-6]\33[0m \n\t   >> ")
+        choice = input("\n\t\33[92m      Enter your choice[1-7]\33[0m \n\t   >> ")
         if choice == '1':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
             list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
@@ -61,14 +80,16 @@ def play():
             userInput = input('\n\t\33[92m   Enter a number you want to add\33[0m \n\t    >> ')
             list1.append(userInput)
             print("\t" + str(list1) + "\n")
+            separator()
             
         elif choice == '2':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
             list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
-            userInput = input('\n\t\33[92m   Enter a number you want to insert\33[0m \n\t    >> ')
+            userInput = int(input('\n\t\33[92m   Enter a number you want to insert\33[0m \n\t    >> '))
             list1.insert(userInput)
             print("\t" + str(list1) + "\n")
+            separator()
             
         elif choice == '3':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
@@ -77,14 +98,16 @@ def play():
             print("\t\33[3m\33[1mThis is the Sum of the elements: \33[0m")
             total = sum(list1)
             print("\t" + str(total) + "\n")
+            separator()
             
         elif choice == '4':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
             list1 = [1, 9, 2, 12, 26, 17, 83, 8, 15, 79]
             print("\t" + str(list1) + "\n")
-            userInput = input('\n\t\33[92m   Enter a number you want to delete\33[0m \n\t    >> ')
+            userInput = int(input('\n\t\33[92m   Enter a number you want to delete\33[0m \n\t    >> '))
             list1.remove(userInput)
-            print("\t" + str(list1) + "\n")
+            print("\n\t" + str(list1) + "\n")
+            separator()
             
         elif choice == '5':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
@@ -93,6 +116,7 @@ def play():
             list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 79])
             print("\t\33[3m\33[1mSorted in ascending order: \33[0m")
             print("\t" + str(list1) + "\n")
+            separator()
             
         elif choice == '6':
             print("\n\t\33[3m\33[1m          This is the list: \33[0m")
@@ -101,16 +125,20 @@ def play():
             list1 = sorted([1, 9, 2, 12, 26, 17, 83, 8, 15, 79], reverse=True)
             print("\t\33[3m\33[1mSorted in descending order: \33[0m")
             print("\t" + str(list1) + "\n")
+            separator()
             
         elif choice == '7':
             print("\n")
             separator()
-            print ("\t\33[1m\33[31m\33[3m        You can now exit.\33[0m")
+            print ("\t\33[1m\33[93m\33[3m        You can now exit.\33[0m")
             separator()
             sys.exit("\n")
             
         else:
-            print("\33[31m\33[1m       Error! Invalid input. Press any key to continue...\33[0m\n")
+            separator()
+            print("\33[31m\33[1m\t       Error! Invalid input.\33[0m")
+            print("\33[31m\33[1m\t   Press any key to continue...\33[0m")
+            separator()
             
     
 
